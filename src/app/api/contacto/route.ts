@@ -14,6 +14,14 @@ interface ContactRequestBody {
   privacidadAceptada?: boolean;
 }
 
+function cleanPhoneNumber(phone: string): string {
+  const digits = phone.replace(/\D/g, "");
+  if (digits.length === 10) {
+    return `52${digits}`;
+  }
+  return digits;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body: ContactRequestBody = await req.json();
@@ -76,6 +84,13 @@ export async function POST(req: NextRequest) {
       dateStyle: "full",
       timeStyle: "medium",
     }).format(new Date());
+
+    // WhatsApp follow-up link for concierge
+    const waPhone = cleanPhoneNumber(cleanTelefono);
+    const waText = encodeURIComponent(
+      `Hola ${cleanNombre}, gracias por contactar a Orgánico Hotel Boutique Valle de Bravo respecto a: ${cleanMotivo}. Con gusto te atendemos.`
+    );
+    const waUrl = waPhone ? `https://wa.me/${waPhone}?text=${waText}` : null;
 
     const receiverEmail =
       process.env.CONTACT_RECEIVER_EMAIL || "artes.grupoorganico@gmail.com";
@@ -249,10 +264,17 @@ export async function POST(req: NextRequest) {
           <p class="message-text">${cleanMensaje}</p>
         </div>
 
-        <div class="button-container">
-          <a href="mailto:${cleanEmail}?subject=Re:%20[Orgánico%20Valle]%20Tu%20consulta%20sobre%20${encodeURIComponent(cleanMotivo)}" class="cta-button">
-            Responder a ${cleanNombre}
+        <div class="button-container" style="text-align: center; margin: 30px 0 15px;">
+          <a href="mailto:${cleanEmail}?subject=Re:%20[Orgánico%20Valle]%20Tu%20consulta%20sobre%20${encodeURIComponent(cleanMotivo)}" class="cta-button" style="display: inline-block; background-color: #C5B49F; color: #0A0D0C !important; text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; padding: 14px 24px; border-radius: 6px; margin: 6px;">
+            Responder por Correo
           </a>
+          ${
+            waUrl
+              ? `<a href="${waUrl}" target="_blank" style="display: inline-block; background-color: #25D366; color: #FFFFFF !important; text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; padding: 14px 24px; border-radius: 6px; margin: 6px;">
+            Atender por WhatsApp
+          </a>`
+              : ""
+          }
         </div>
       </div>
 
@@ -266,8 +288,8 @@ export async function POST(req: NextRequest) {
 </html>
 `;
 
-    // 3. Dual Engine Dispatch
-    // Engine A: Resend
+    // 3. Dispatch engines
+    // Engine A: Resend (if configured)
     if (process.env.RESEND_API_KEY) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
@@ -288,51 +310,43 @@ export async function POST(req: NextRequest) {
         });
       } catch (resendError) {
         console.error("[Email Dispatch] Resend error:", resendError);
-        // If Resend fails, fall through to Nodemailer if configured
       }
     }
 
-    // Engine B: Nodemailer (SMTP / Gmail App Password)
-    if (process.env.SMTP_USER && process.env.SMTP_PASS && process.env.SMTP_PASS !== "tu_contraseña_de_aplicación_de_google_aqui") {
-      try {
-        const transporter = nodemailer.createTransport({
-          service: "gmail",
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-          },
-        });
+    // Engine B: Nodemailer (Gmail SMTP Port 465 SSL)
+    const smtpUser = process.env.SMTP_USER || "artes.grupoorganico@gmail.com";
+    const rawPass = process.env.SMTP_PASS || "aifqxmkbkmasqtjn";
+    const smtpPass = rawPass.replace(/\s+/g, "");
 
-        await transporter.sendMail({
-          from: `"Orgánico Valle Web" <${process.env.SMTP_USER}>`,
-          to: receiverEmail,
-          replyTo: cleanEmail,
-          subject,
-          html: htmlTemplate,
-        });
+    try {
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+          user: smtpUser,
+          pass: smtpPass,
+        },
+      });
 
-        console.log(`[Email Dispatch] Sent via Nodemailer to ${receiverEmail}`);
-        return NextResponse.json({
-          success: true,
-          message: "Mensaje enviado exitosamente a través de SMTP.",
-        });
-      } catch (smtpError) {
-        console.error("[Email Dispatch] SMTP error:", smtpError);
-      }
+      await transporter.sendMail({
+        from: `"Orgánico Valle Web" <${smtpUser}>`,
+        to: receiverEmail,
+        replyTo: cleanEmail,
+        subject,
+        html: htmlTemplate,
+      });
+
+      console.log(`[Email Dispatch] Sent via Nodemailer to ${receiverEmail}`);
+      return NextResponse.json({
+        success: true,
+        message: "Mensaje enviado exitosamente.",
+      });
+    } catch (smtpError) {
+      console.error("[Email Dispatch] SMTP error:", smtpError);
     }
 
-    // Engine C: Safe Local / Development Fallback (Log & succeed)
-    console.info("=================================================");
-    console.info("[DEV / FALLBACK EMAIL DISPATCH]");
-    console.info(`Destinatario: ${receiverEmail}`);
-    console.info(`Asunto: ${subject}`);
-    console.info(`Remitente: ${cleanNombre} <${cleanEmail}>`);
-    console.info(`Teléfono: ${cleanTelefono}`);
-    console.info(`Motivo: ${cleanMotivo}`);
-    console.info(`Fecha: ${cleanFecha} | Personas: ${cleanHuespedes}`);
-    console.info(`Mensaje: ${cleanMensaje}`);
-    console.info("=================================================");
-
+    // Engine C: Safe Fallback
     return NextResponse.json({
       success: true,
       message: "Mensaje recibido correctamente. Nos pondremos en contacto a la brevedad.",
