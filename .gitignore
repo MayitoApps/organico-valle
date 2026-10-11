@@ -37,3 +37,6 @@ next-env.d.ts
 
 # raw photographer assets
 /Imagenes/
+
+.vercel
+.env*
