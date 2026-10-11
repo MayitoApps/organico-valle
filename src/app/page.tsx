@@ -9,7 +9,7 @@ import {
   Wine,
   CheckCircle,
 } from "lucide-react";
-import HeroVideo from "@/components/HeroVideo";
+import HeroSection from "@/components/HeroSection";
 import RoomCard from "@/components/RoomCard";
 import OrigenSpaSection from "@/components/OrigenSpaSection";
 import GrupoOrganicoSection from "@/components/GrupoOrganicoSection";
@@ -25,8 +25,8 @@ export default function HomePage() {
       {/* Pop-up Campaña Día de Muertos 2026 */}
       <DiaDeMuertosModal />
 
-      {/* 1. Hero Section with YouTube Background Loop */}
-      <HeroVideo />
+      {/* 1. Hero Section with Exterior Image */}
+      <HeroSection />
 
       {/* 2. Descubre el Universo de Grupo Orgánico Hoteles Boutique (Ubicado justo después del Hero) */}
       <GrupoOrganicoSection />
