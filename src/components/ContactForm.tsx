@@ -6,7 +6,6 @@ import {
   Mail,
   Phone,
   Sparkles,
-  Calendar,
   Users,
   MessageSquare,
   Loader2,
@@ -22,7 +21,7 @@ interface FormData {
   email: string;
   telefono: string;
   motivo: string;
-  fecha: string;
+  fecha?: string;
   huespedes: string;
   mensaje: string;
   website_hp: string;
@@ -146,7 +145,7 @@ export default function ContactForm() {
   };
 
   const getWhatsAppFollowUpUrl = () => {
-    const text = `Hola Orgánico Hotel Boutique Valle de Bravo, acabo de enviar una solicitud desde la web:\n- Nombre: ${formData.nombre}\n- Interés: ${formData.motivo}\n- Fechas/Huéspedes: ${formData.fecha || "Por definir"} / ${formData.huespedes || "No especificado"}\nMe gustaría dar seguimiento a mi solicitud.`;
+    const text = `Hola Orgánico Hotel Boutique Valle de Bravo, acabo de enviar una solicitud desde la web:\n- Nombre: ${formData.nombre}\n- Interés: ${formData.motivo}\n- Huéspedes: ${formData.huespedes || "No especificado"}\nMe gustaría dar seguimiento a mi solicitud.`;
     return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
   };
 
@@ -312,36 +311,20 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Grid Row 3: Fecha Tentativa & Huéspedes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#C5B49F] mb-2 font-medium">
-                  <Calendar className="w-3.5 h-3.5" />
-                  Fecha Tentativa (Opcional)
-                </label>
-                <input
-                  type="date"
-                  name="fecha"
-                  value={formData.fecha}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3.5 rounded-lg bg-white/[0.03] border border-white/10 text-[#F4F5F1] text-sm focus:outline-none focus:border-[#C5B49F] focus:ring-1 focus:ring-[#C5B49F] transition-all [color-scheme:dark]"
-                />
-              </div>
-
-              <div>
-                <label className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#C5B49F] mb-2 font-medium">
-                  <Users className="w-3.5 h-3.5" />
-                  Nº de Huéspedes / Asistentes (Opcional)
-                </label>
-                <input
-                  type="text"
-                  name="huespedes"
-                  placeholder="Ej. 2 adultos, 1 mascota"
-                  value={formData.huespedes}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3.5 rounded-lg bg-white/[0.03] border border-white/10 text-[#F4F5F1] placeholder-[#8E9B93]/50 text-sm focus:outline-none focus:border-[#C5B49F] focus:ring-1 focus:ring-[#C5B49F] transition-all"
-                />
-              </div>
+            {/* Nº de Huéspedes / Asistentes */}
+            <div>
+              <label className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#C5B49F] mb-2 font-medium">
+                <Users className="w-3.5 h-3.5" />
+                Nº de Huéspedes / Asistentes (Opcional)
+              </label>
+              <input
+                type="text"
+                name="huespedes"
+                placeholder="Ej. 2 adultos, 1 mascota o evento de 30 personas"
+                value={formData.huespedes}
+                onChange={handleChange}
+                className="w-full px-4 py-3.5 rounded-lg bg-white/[0.03] border border-white/10 text-[#F4F5F1] placeholder-[#8E9B93]/50 text-sm focus:outline-none focus:border-[#C5B49F] focus:ring-1 focus:ring-[#C5B49F] transition-all"
+              />
             </div>
 
             {/* Mensaje */}
