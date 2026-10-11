@@ -39,23 +39,23 @@ export default function HeroVideo() {
           <p>Suites privadas entre el bosque y momentos para reconectar con lo esencial.</p>
         </div>
 
-        {/* CTA Buttons - Compact & Single Line */}
-        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+        {/* CTA Buttons - Perfectly Balanced & Equal Size on Mobile & Desktop */}
+        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 w-full max-w-[370px] sm:flex sm:w-auto sm:items-center sm:justify-center sm:gap-4">
           <a
             href={getWhatsAppUrl("general")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-[11px] sm:text-xs uppercase tracking-[0.16em] font-semibold hover:bg-[#d8c7b5] transition-all duration-300 shadow-xl shadow-[#C5B49F]/25 whitespace-nowrap group"
+            className="w-full sm:w-auto sm:min-w-[195px] inline-flex items-center justify-center gap-2 px-3 sm:px-7 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-[10.5px] min-[390px]:text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.16em] font-semibold hover:bg-[#d8c7b5] transition-all duration-300 shadow-xl shadow-[#C5B49F]/25 whitespace-nowrap group text-center"
           >
-            <WhatsAppIcon black size={18} className="w-4 h-4" />
+            <WhatsAppIcon black size={16} className="w-4 h-4 flex-shrink-0" />
             <span>Reservar</span>
           </a>
 
           <Link
             href="/nuestras-habitaciones"
-            className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-white/[0.08] border border-white/20 text-[#F4F5F1] text-[11px] sm:text-xs uppercase tracking-[0.16em] font-medium hover:bg-white/[0.16] hover:border-[#C5B49F]/60 backdrop-blur-md transition-all duration-300 shadow-lg whitespace-nowrap group"
+            className="w-full sm:w-auto sm:min-w-[195px] inline-flex items-center justify-center gap-2 px-3 sm:px-7 py-3 rounded-full bg-white/[0.08] border border-white/20 text-[#F4F5F1] text-[10.5px] min-[390px]:text-[11px] sm:text-xs uppercase tracking-[0.08em] min-[390px]:tracking-[0.12em] sm:tracking-[0.16em] font-medium hover:bg-white/[0.16] hover:border-[#C5B49F]/60 backdrop-blur-md transition-all duration-300 shadow-lg whitespace-nowrap group text-center"
           >
-            <Bed className="w-4 h-4 text-[#C5B49F] transition-transform duration-300 group-hover:scale-110" />
+            <Bed className="w-4 h-4 text-[#C5B49F] flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Ver Habitaciones</span>
           </Link>
         </div>

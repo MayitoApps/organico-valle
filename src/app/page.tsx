@@ -15,12 +15,16 @@ import OrigenSpaSection from "@/components/OrigenSpaSection";
 import GrupoOrganicoSection from "@/components/GrupoOrganicoSection";
 import ContactForm from "@/components/ContactForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import DiaDeMuertosModal from "@/components/DiaDeMuertosModal";
 import { ROOMS, SPACES, MOMENTS } from "@/lib/data";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function HomePage() {
   return (
     <div className="w-full bg-[#0A0D0C] overflow-hidden">
+      {/* Pop-up Campaña Día de Muertos 2026 */}
+      <DiaDeMuertosModal />
+
       {/* 1. Hero Section with YouTube Background Loop */}
       <HeroVideo />
 
