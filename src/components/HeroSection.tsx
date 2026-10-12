@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
         <Image
           src="/images/hero/hero-exterior.webp"
-          alt="Orgánico Hotel Boutique Valle de Bravo - Jardines y Arquitectura"
+          alt="Orgánico Hotel Boutique Valle de Bravo - Vista panorámica aérea de las instalaciones y bosque"
           fill
           priority
           sizes="100vw"
