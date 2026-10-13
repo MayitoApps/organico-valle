@@ -3,71 +3,86 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Bed, ArrowDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0A0D0C]">
-      {/* Background Hero Image with natural luminosity and subtle soft overlays */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
+    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-20 px-5 sm:px-8 overflow-hidden bg-[#0A0D0C]">
+      {/* Background Image & Multi-layered Scrims */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero/hero-exterior.webp"
           alt="Orgánico Hotel Boutique Valle de Bravo - Vista panorámica aérea de las instalaciones y bosque"
           fill
           priority
+          loading="eager"
+          className="object-cover object-center scale-105 transform animate-in fade-in duration-1000"
           sizes="100vw"
-          className="object-cover object-center filter brightness-[0.88] contrast-[1.02]"
         />
-        {/* Soft, balanced overlays - Allows the image colors and light to shine through */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0D0C]/65 via-[#0A0D0C]/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D0C] via-[#0A0D0C]/30 to-transparent" />
-        <div className="absolute inset-0 bg-black/15" />
+        {/* Multi-layered dark gradients for atmospheric depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D0C] via-[#0A0D0C]/60 to-black/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,13,12,0.8)_100%)]" />
       </div>
 
-      {/* Hero Content - Centered with strong legibility drop-shadows */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center pt-24 sm:pt-28 pb-16 sm:pb-20 flex flex-col items-center">
-        {/* Main Title - Prominent Editorial Scale on Mobile */}
-        <h1 className="text-[2.6rem] min-[390px]:text-[3rem] sm:text-5xl md:text-6xl lg:text-7xl font-serif text-[#F4F5F1] tracking-tight leading-[1.08] sm:leading-[1.12] max-w-4xl mx-auto text-balance drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)] font-normal">
-          Así se siente el lago,
-          <span className="block italic font-light text-[#C5B49F] mt-1 sm:mt-2.5 drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
-            Así se Siente Orgánico valle
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-6 mt-8 reveal-stagger">
+        {/* Overline tag */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/15 text-[11px] uppercase tracking-[0.3em] text-[#C5B49F] font-semibold reveal">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#C5B49F] animate-pulse" />
+          <span>Valle de Bravo · A 2h de CDMX · Estado de México</span>
+        </div>
+
+        {/* Mandatory Hero Title */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-[#F4F5F1] tracking-tight leading-[1.08] max-w-4xl reveal">
+          Así se siente el Lago, <br />
+          <span className="font-normal text-[#C5B49F]">
+            Así se siente Orgánico Valle.
           </span>
         </h1>
 
-        {/* Elegant Editorial Subtitle in Two Balanced Paragraphs */}
-        <div className="mt-5 sm:mt-6 text-[12px] min-[390px]:text-[13px] sm:text-base md:text-lg text-[#F4F5F1] max-w-3xl mx-auto font-light leading-relaxed tracking-wide space-y-1 sm:space-y-1.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-          <p>Un santuario de calma y naturaleza viva a la orilla de Valle de Bravo.</p>
-          <p>Suites privadas entre el bosque y momentos para reconectar con lo esencial.</p>
-        </div>
+        {/* Subtitle */}
+        <p className="text-base sm:text-lg md:text-xl text-[#9AA39D] font-light max-w-2xl leading-relaxed reveal">
+          Un santuario de calma y naturaleza viva a la orilla de Valle de Bravo. Suites privadas entre el bosque y momentos para reconectar con lo esencial.
+        </p>
 
-        {/* CTA Buttons - Perfectly Balanced & Equal Size on Mobile & Desktop */}
-        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 w-full max-w-[370px] sm:flex sm:w-auto sm:items-center sm:justify-center sm:gap-4">
+        {/* Direct Actions */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto reveal">
           <a
-            href={getWhatsAppUrl("general")}
+            href={getWhatsAppUrl("habitaciones_general")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto sm:min-w-[195px] inline-flex items-center justify-center gap-2 px-3 sm:px-7 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-[10.5px] min-[390px]:text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.16em] font-semibold hover:bg-[#d8c7b5] transition-all duration-300 shadow-xl shadow-[#C5B49F]/25 whitespace-nowrap group text-center"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-[#D8C7B3] hover:shadow-lg hover:shadow-[#C5B49F]/20 active:scale-[0.98] transition-all duration-300 shadow-2xl select-none"
+            aria-label="Reservar por WhatsApp para Orgánico Valle"
           >
-            <WhatsAppIcon black size={16} className="w-4 h-4 flex-shrink-0" />
-            <span>Reservar</span>
+            <WhatsAppIcon black size={18} className="w-4 h-4 shrink-0" />
+            <span>Reservar por WhatsApp</span>
           </a>
-
           <Link
             href="/nuestras-habitaciones"
-            className="w-full sm:w-auto sm:min-w-[195px] inline-flex items-center justify-center gap-2 px-3 sm:px-7 py-3 rounded-full bg-black/40 border border-white/25 text-[#F4F5F1] text-[10.5px] min-[390px]:text-[11px] sm:text-xs uppercase tracking-[0.08em] min-[390px]:tracking-[0.12em] sm:tracking-[0.16em] font-medium hover:bg-black/60 hover:border-[#C5B49F]/60 backdrop-blur-md transition-all duration-300 shadow-lg whitespace-nowrap group text-center"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-xs sm:text-sm font-medium uppercase tracking-wider text-[#F4F5F1] bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 backdrop-blur-md transition-all duration-300 group"
           >
-            <Bed className="w-4 h-4 text-[#C5B49F] flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Ver Habitaciones</span>
+            <ArrowRight className="w-4 h-4 text-[#C5B49F] group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
-      </div>
 
-      {/* Subtle Scroll Indicator */}
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-[#C5B49F] text-[10px] uppercase tracking-[0.25em] pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-        <span>Descubre</span>
-        <ArrowDown className="w-3.5 h-3.5 text-[#C5B49F] animate-bounce" />
+        {/* Quick Metrics */}
+        <div className="grid grid-cols-3 gap-6 sm:gap-12 pt-12 border-t border-white/10 w-full max-w-2xl text-center reveal-stagger">
+          <div className="reveal">
+            <p className="text-xl sm:text-2xl font-light text-[#F4F5F1]">40</p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E9B93] mt-1">Suites de Lujo</p>
+          </div>
+          <div className="reveal">
+            <p className="text-xl sm:text-2xl font-light text-[#F4F5F1]">6+ Hectáreas</p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E9B93] mt-1">Jardines y Bosque</p>
+          </div>
+          <div className="reveal">
+            <p className="text-xl sm:text-2xl font-light text-[#F4F5F1]">Pet Friendly</p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E9B93] mt-1">100% Bienvenidos</p>
+          </div>
+        </div>
       </div>
     </section>
   );

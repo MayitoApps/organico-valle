@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         background: "#0A0D0C",
-        card: "#121715",
+        card: "#121714",
         "card-muted": "#161D1A",
         surface: "#101614",
         gold: {
@@ -22,8 +22,10 @@ module.exports = {
         cream: "#F4F5F1",
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Georgia", "serif"],
-        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        cinzel: ["var(--font-cinzel)", "Cinzel", "Georgia", "serif"],
+        serif: ["var(--font-display)", "var(--font-sans)", "system-ui", "sans-serif"],
       },
       animation: {
         'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',

@@ -40,9 +40,9 @@ export default function HomePage() {
               Santuario Natural en Valle de Bravo
             </span>
 
-            <h2 className="text-3xl sm:text-5xl font-serif text-[#F4F5F1] leading-tight">
-              Escápate a Valle de Bravo y <br />
-              <span className="italic font-light text-[#C5B49F]">vuelve a lo esencial</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[38px] text-[#F4F5F1] leading-[1.18] tracking-tight">
+              <span className="block">Escápate a Valle de Bravo y</span>
+              <span className="block italic font-light text-[#C5B49F] mt-1">vuelve a lo esencial</span>
             </h2>
 
             <p className="text-sm sm:text-base text-[#8E9B93] leading-relaxed font-light">

@@ -103,7 +103,7 @@ export default function DiaDeMuertosModal() {
             <span>DÍA DE MUERTOS 2026 · VALLE DE BRAVO</span>
           </div>
 
-          <h2 className="text-2xl sm:text-[26px] font-serif font-bold leading-tight tracking-wide mb-2 bg-gradient-to-r from-white via-[#F59E42] to-[#D9822B] bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-[26px] font-cinzel font-bold leading-tight tracking-wide mb-2 bg-gradient-to-r from-white via-[#F59E42] to-[#D9822B] bg-clip-text text-transparent">
             Recordar es volver a encontrarnos
           </h2>
           <p className="text-[13px] sm:text-[13.5px] text-[#A89B91] max-w-md mx-auto leading-relaxed">
@@ -118,7 +118,7 @@ export default function DiaDeMuertosModal() {
             <div className="text-[10px] font-bold tracking-[0.08em] text-[#D9822B] uppercase mb-0.5">
               31 DE OCTUBRE · 7:00 PM · $1,700 MXN
             </div>
-            <div className="font-serif text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
+            <div className="font-cinzel text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
               Cena de Raíces Valle de Bravo
             </div>
             <p className="text-[12px] text-[#A89B91] leading-relaxed m-0">
@@ -131,7 +131,7 @@ export default function DiaDeMuertosModal() {
             <div className="text-[10px] font-bold tracking-[0.08em] text-[#D9822B] uppercase mb-0.5">
               TEMPORADA OFICIAL DE MUERTOS
             </div>
-            <div className="font-serif text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
+            <div className="font-cinzel text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
               Restaurante Milagro: Mole Tradicional
             </div>
             <p className="text-[12px] text-[#A89B91] leading-relaxed m-0">
@@ -144,7 +144,7 @@ export default function DiaDeMuertosModal() {
             <div className="text-[10px] font-bold tracking-[0.08em] text-[#D9822B] uppercase mb-0.5">
               DOBLE FUNCIÓN · 7:00 PM Y 9:30 PM
             </div>
-            <div className="font-serif text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
+            <div className="font-cinzel text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
               Cine de Terror al Aire Libre
             </div>
             <p className="text-[12px] text-[#A89B91] leading-relaxed m-0">
@@ -157,7 +157,7 @@ export default function DiaDeMuertosModal() {
             <div className="text-[10px] font-bold tracking-[0.08em] text-[#D9822B] uppercase mb-0.5">
               +120 ACTIVIDADES CULTURALES
             </div>
-            <div className="font-serif text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
+            <div className="font-cinzel text-[14.5px] font-bold text-[#F2E8DC] mb-1 leading-snug">
               Festival de las Almas & Pan Relleno
             </div>
             <p className="text-[12px] text-[#A89B91] leading-relaxed m-0">
