@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Sparkles, Users, Bed, Check, ShieldCheck, Heart } from "lucide-react";
-import { ROOMS } from "@/lib/data";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { Sparkles, Check, Heart, ArrowUpRight } from "lucide-react";
+import { ROOMS, HOTEL_INFO } from "@/lib/data";
 import OrigenSpaSection from "@/components/OrigenSpaSection";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: "Habitaciones & Suites | Orgánico Hotel Boutique Valle de Bravo",
@@ -120,13 +118,13 @@ export default function HabitacionesPage() {
                     </div>
 
                     <a
-                      href={getWhatsAppUrl(room.bookingType)}
+                      href={HOTEL_INFO.bookingUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 py-4 px-8 rounded-xl bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all shadow-xl shadow-[#C5B49F]/20"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all shadow-xl shadow-[#C5B49F]/20"
                     >
-                      <WhatsAppIcon black className="w-4 h-4" />
-                      <span>Reservar por WhatsApp</span>
+                      <span>Reservar</span>
+                      <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>

@@ -2,10 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import { Users, Check } from "lucide-react";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { RoomData } from "@/lib/data";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { Users, Check, ArrowUpRight } from "lucide-react";
+import { RoomData, HOTEL_INFO } from "@/lib/data";
 
 interface RoomCardProps {
   room: RoomData;
@@ -13,7 +11,6 @@ interface RoomCardProps {
 }
 
 export default function RoomCard({ room, featured = false }: RoomCardProps) {
-  const whatsappUrl = getWhatsAppUrl(room.bookingType);
 
   return (
     <div
@@ -86,13 +83,13 @@ export default function RoomCard({ room, featured = false }: RoomCardProps) {
           </div>
 
           <a
-            href={whatsappUrl}
+            href={HOTEL_INFO.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2.5 py-3 px-5 rounded-xl bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all shadow-lg shadow-[#C5B49F]/20"
+            className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all shadow-lg shadow-[#C5B49F]/20"
           >
-            <WhatsAppIcon black className="w-4 h-4" />
-            <span>Reservar por WhatsApp</span>
+            <span>Reservar</span>
+            <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
       </div>

@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { HOTEL_INFO } from "@/lib/data";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
@@ -89,8 +90,18 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center justify-end z-10">
+          {/* Right: Reservar Button & Mobile Menu Button */}
+          <div className="flex items-center justify-end gap-3 sm:gap-4 z-10">
+            <a
+              href={HOTEL_INFO.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-[#C5B49F]/30 bg-[#C5B49F]/10 hover:bg-[#C5B49F] text-[#F4F5F1] hover:text-[#0A0D0C] text-[10.5px] 2xl:text-[11px] uppercase tracking-[0.16em] font-medium transition-all duration-300 shadow-sm hover:shadow-[0_4px_16px_rgba(197,180,159,0.25)]"
+            >
+              <span>Reservar</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="xl:hidden p-2 text-[#F4F5F1] hover:text-[#C5B49F] focus:outline-none transition-colors"
@@ -128,7 +139,17 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="pt-6 border-t border-white/10">
+        <div className="pt-6 border-t border-white/10 space-y-4">
+          <a
+            href={HOTEL_INFO.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-[#C5B49F]/40 bg-[#C5B49F] text-[#0A0D0C] text-[11px] uppercase tracking-[0.18em] font-semibold transition-all duration-300 shadow-[0_4px_16px_rgba(197,180,159,0.3)] active:scale-[0.98]"
+          >
+            <span>Reservar</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+
           <div className="flex items-center justify-between text-xs text-[#8E9B93]">
             <span>Reservaciones:</span>
             <a href="tel:+525596910966" className="text-[#C5B49F] font-mono hover:underline">

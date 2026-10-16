@@ -3,9 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { HOTEL_INFO } from "@/lib/data";
 
 export default function HeroSection() {
   return (
@@ -50,14 +49,14 @@ export default function HeroSection() {
         {/* Direct Actions */}
         <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto reveal">
           <a
-            href={getWhatsAppUrl("habitaciones_general")}
+            href={HOTEL_INFO.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-[#D8C7B3] hover:shadow-lg hover:shadow-[#C5B49F]/20 active:scale-[0.98] transition-all duration-300 shadow-2xl select-none"
-            aria-label="Reservar por WhatsApp para Orgánico Valle"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-[#D8C7B3] hover:shadow-lg hover:shadow-[#C5B49F]/20 active:scale-[0.98] transition-all duration-300 shadow-2xl select-none"
+            aria-label="Reservar en Orgánico Valle"
           >
-            <WhatsAppIcon black size={18} className="w-4 h-4 shrink-0" />
-            <span>Reservar por WhatsApp</span>
+            <span>Reservar</span>
+            <ArrowUpRight className="w-4 h-4 shrink-0" />
           </a>
           <Link
             href="/nuestras-habitaciones"
