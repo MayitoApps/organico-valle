@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { Resend } from "resend";
 
+export const runtime = "nodejs";
+
 interface ContactRequestBody {
   nombre: string;
   email: string;
@@ -295,7 +297,7 @@ export async function POST(req: NextRequest) {
 
     // Engine B: Nodemailer (Gmail SMTP Port 465 SSL)
     const smtpUser = process.env.SMTP_USER || "artes.grupoorganico@gmail.com";
-    const rawPass = process.env.SMTP_PASS || "aifqxmkbkmasqtjn";
+    const rawPass = process.env.SMTP_PASS || "nefuypoxqlbtfclz";
     const smtpPass = rawPass.replace(/\s+/g, "");
 
     try {
@@ -307,6 +309,9 @@ export async function POST(req: NextRequest) {
           user: smtpUser,
           pass: smtpPass,
         },
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
       });
 
       await transporter.sendMail({
@@ -324,14 +329,14 @@ export async function POST(req: NextRequest) {
       });
     } catch (smtpError) {
       console.error("[Email Dispatch] SMTP error:", smtpError);
+      return NextResponse.json(
+        {
+          success: false,
+          error: "No fue posible enviar el mensaje por correo en este momento. Por favor contáctanos vía WhatsApp.",
+        },
+        { status: 500 }
+      );
     }
-
-    // Engine C: Safe Fallback
-    return NextResponse.json({
-      success: true,
-      message: "Mensaje recibido correctamente. Nos pondremos en contacto a la brevedad.",
-      dev_fallback: true,
-    });
   } catch (error) {
     console.error("[API Contacto] Error procesando solicitud:", error);
     return NextResponse.json(
