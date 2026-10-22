@@ -42,7 +42,7 @@ const DEFAULT_MESSAGES: Record<BookingServiceType, string> = {
   cena_romantica:
     "Hola Orgánico Hotel Boutique Valle, quiero planear una Cena Romántica Privada bajo las estrellas. ¿Podrían enviarme las opciones y menús de autor?",
   bar_bienaventurado:
-    "Hola Orgánico Hotel Boutique Valle, me gustaría información sobre Bar Bienaventurado, su carta de mixología y disponibilidad de mesa.",
+    "Hola Orgánico Hotel Boutique Valle, me gustaría información sobre Bar Bienaventurado, su mixología, música en vivo y noches de karaoke.",
   cata_vino:
     "Hola Orgánico Hotel Boutique Valle, me interesa agendar una Cata de Vinos y maridaje durante mi estancia.",
   fogatada:

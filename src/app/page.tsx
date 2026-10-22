@@ -139,7 +139,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Card Restaurante Milagro */}
-          <div className="relative rounded-2xl overflow-hidden bg-[#121715] border border-white/10 group flex flex-col justify-between shadow-2xl">
+          <div className="relative rounded-2xl overflow-hidden bg-[#121715] border border-white/10 group flex flex-col shadow-2xl">
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/images/restaurante/milagro-1.webp"
@@ -154,38 +154,40 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="p-8 sm:p-10 space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-serif text-[#F4F5F1]">
-                Sabores que se disfrutan sin prisas
-              </h3>
-              <p className="text-sm text-[#8E9B93] leading-relaxed font-light">
-                Homenaje culinario a los ingredientes locales y recetas de campo. Disfruta de nuestro exclusivo Brunch los fines de semana o agenda una Cena Romántica Privada bajo el cielo estrellado de Valle.
-              </p>
+            <div className="p-8 sm:p-10 flex flex-col justify-between flex-1">
+              <div className="space-y-4">
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#F4F5F1]">
+                  Sabores que se disfrutan sin prisas
+                </h3>
+                <p className="text-sm text-[#8E9B93] leading-relaxed font-light">
+                  Homenaje culinario a los ingredientes locales y recetas de campo. Disfruta de nuestro exclusivo Brunch los fines de semana o agenda una Cena Romántica Privada bajo el cielo estrellado de Valle.
+                </p>
+              </div>
 
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              <div className="pt-6 mt-6 border-t border-white/5 flex flex-wrap items-center gap-3 sm:gap-4">
                 <a
                   href={getWhatsAppUrl("restaurante_milagro")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all w-full sm:w-[205px] h-[44px] text-center shadow-md shadow-[#C5B49F]/10"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5" />
+                  <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>Reservar Mesa</span>
                 </a>
 
                 <Link
                   href="/restaurante"
-                  className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#F4F5F1] hover:text-[#C5B49F] transition-colors py-2"
+                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#F4F5F1] hover:text-[#C5B49F] transition-colors py-2 whitespace-nowrap"
                 >
                   <span>Conocer Menú & Brunch</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Card Bar Bienaventurado */}
-          <div className="relative rounded-2xl overflow-hidden bg-[#121715] border border-white/10 group flex flex-col justify-between shadow-2xl">
+          <div className="relative rounded-2xl overflow-hidden bg-[#121715] border border-white/10 group flex flex-col shadow-2xl">
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/images/mixologia/bar-mesa.webp"
@@ -200,31 +202,33 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="p-8 sm:p-10 space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-serif text-[#F4F5F1]">
-                El refugio de la tertulia y la mixología
-              </h3>
-              <p className="text-sm text-[#8E9B93] leading-relaxed font-light">
-                Un espacio íntimo y relajado diseñado para desconectar y brindar sin prisas. Disfruta de nuestra exclusiva carta de coctelería botánica de autor, selecta curaduría de vinos de pequeñas bodegas mexicanas y un ambiente cálido rodeado de naturaleza.
-              </p>
+            <div className="p-8 sm:p-10 flex flex-col justify-between flex-1">
+              <div className="space-y-4">
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#F4F5F1]">
+                  El refugio de la tertulia y la mixología
+                </h3>
+                <p className="text-sm text-[#8E9B93] leading-relaxed font-light">
+                  Un espacio íntimo y relajado diseñado para desconectar, brindar y cantar. Disfruta de coctelería botánica de autor, música en vivo, noches de karaoke y el mejor ambiente rodeado de naturaleza.
+                </p>
+              </div>
 
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              <div className="pt-6 mt-6 border-t border-white/5 flex flex-wrap items-center gap-3 sm:gap-4">
                 <a
                   href={getWhatsAppUrl("bar_bienaventurado")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all w-full sm:w-[205px] h-[44px] text-center shadow-md shadow-[#C5B49F]/10"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5" />
-                  <span>Preguntar por Bar Bienaventurado</span>
+                  <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>Preguntar por Bar</span>
                 </a>
 
                 <Link
                   href="/mixologia"
-                  className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#F4F5F1] hover:text-[#C5B49F] transition-colors py-2"
+                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#F4F5F1] hover:text-[#C5B49F] transition-colors py-2 whitespace-nowrap"
                 >
                   <span>Explorar Mixología</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
                 </Link>
               </div>
             </div>

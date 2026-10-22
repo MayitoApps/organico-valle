@@ -8,7 +8,7 @@ import OrigenSpaSection from "@/components/OrigenSpaSection";
 export const metadata: Metadata = {
   title: "Habitaciones & Suites | Orgánico Hotel Boutique Valle de Bravo",
   description:
-    "Descubre nuestras 40 habitaciones y suites privadas en Valle de Bravo. Suite Master, Suite Premium y Suite Familiar con chimenea, balcón y rodeadas de bosque.",
+    "Descubre nuestras 40 habitaciones y suites privadas en Valle de Bravo. Suite Master, Suite Premium y Suite Familiar diseñadas para el descanso y confort en el bosque.",
 };
 
 export default function HabitacionesPage() {

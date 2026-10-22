@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Wine, Flame, Music, Sparkles, Moon, GlassWater } from "lucide-react";
+import { Wine, Flame, Music, Sparkles, Moon, GlassWater, Mic2 } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: "Mixología & Bar Bienaventurado | Orgánico Hotel Boutique Valle de Bravo",
   description:
-    "Disfruta de Bar Bienaventurado en Valle de Bravo. Cocteles de autor con botánicos locales, noches de trovador en vivo, fogateros al aire libre y cava de vinos.",
+    "Disfruta de Bar Bienaventurado en Valle de Bravo. Cocteles de autor con botánicos locales, música en vivo, noches de karaoke y fogateros al aire libre.",
 };
 
 export default function MixologiaPage() {
@@ -18,13 +18,13 @@ export default function MixologiaPage() {
       <section className="px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto text-center mb-20">
         <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#C5B49F] mb-4 font-medium">
           <Wine className="w-3.5 h-3.5" />
-          Alquimia de Sabores & Noches de Fuego
+          Alquimia de Sabores, Música & Noches de Fuego
         </span>
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[#F4F5F1] tracking-tight">
           Bar Bienaventurado
         </h1>
         <p className="mt-6 text-base sm:text-lg text-[#8E9B93] max-w-3xl mx-auto font-light leading-relaxed">
-          Hay momentos que merecen ser detenidos en el tiempo, y Bar Bienaventurado nace para ser ese refugio. Aquí la mixología no es solo técnica, es alquimia: botánicos frescos, destilados premium y el rumor del viento entre los pinos de Valle de Bravo.
+          Hay momentos que merecen ser detenidos en el tiempo, y Bar Bienaventurado nace para ser ese refugio. Aquí la mixología no es solo técnica, es alquimia: botánicos frescos, destilados premium, música en vivo y el mejor ambiente de karaoke en Valle de Bravo.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -35,7 +35,7 @@ export default function MixologiaPage() {
             className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all shadow-xl shadow-[#C5B49F]/20"
           >
             <WhatsAppIcon className="w-4 h-4" />
-            <span>Consultar Noches de Fogata & Trova</span>
+            <span>Consultar Noches de Música & Karaoke</span>
           </a>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function MixologiaPage() {
         </div>
       </section>
 
-      {/* Feature 2: Curaduría de Vinos y Destilados */}
+      {/* Feature 2: Música en Vivo y Noches de Karaoke */}
       <section className="px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto mb-20">
         <div className="rounded-3xl bg-[#121715] border border-white/10 p-8 sm:p-12 lg:p-16 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -102,31 +102,32 @@ export default function MixologiaPage() {
             </div>
 
             <div className="lg:col-span-6 space-y-6 lg:order-1">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#C5B49F] font-medium block">
-                Cava Seleccionada & Mixología Botánica
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C5B49F] font-medium">
+                <Mic2 className="w-3.5 h-3.5" />
+                Música, Karaoke & Buena Compañía
               </span>
 
               <h2 className="text-3xl sm:text-4xl font-serif text-[#F4F5F1]">
-                Curaduría de Vinos de Origen
+                Música en Vivo & Noches de Karaoke
               </h2>
 
               <p className="text-sm sm:text-base text-[#8E9B93] leading-relaxed font-light">
-                La experiencia se complementa con una curaduría especial de vinos de pequeñas producciones, etiquetas cuidadosamente seleccionadas que cuentan historias de territorio, terruño y pasión por el detalle. Vinos pensados para descubrir, compartir y maridar a la perfección con la propuesta de Milagro.
+                La noche cobra vida con el mejor ambiente en Bar Bienaventurado. Canta tus canciones favoritas en nuestras noches de karaoke, disfruta de música en vivo y acompáñalo con nuestra coctelería botánica de autor y fogateros al aire libre.
               </p>
 
               <p className="text-sm sm:text-base text-[#8E9B93] leading-relaxed font-light">
-                Un espacio íntimo y relajado para brindar al atardecer, cerrar el día después de una cena especial o simplemente dejar que la noche fluya entre luces cálidas y buena conversación.
+                Un espacio íntimo y alegre diseñado para desconectar, brindar y divertirse al máximo. Ya sea en pareja o con tu grupo de amigos, es el plan perfecto para cerrar un gran día en Valle de Bravo.
               </p>
 
               <div className="pt-2">
                 <a
-                  href={getWhatsAppUrl("cata_vino")}
+                  href={getWhatsAppUrl("bar_bienaventurado")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C5B49F] text-[#0A0D0C] text-xs uppercase tracking-widest font-semibold hover:bg-[#d8c7b5] transition-all shadow-xl shadow-[#C5B49F]/20"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
-                  <span>Solicitar Información de Catas</span>
+                  <span>Preguntar por Noches de Karaoke</span>
                 </a>
               </div>
             </div>
@@ -175,13 +176,13 @@ export default function MixologiaPage() {
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-xl group">
             <Image
               src="/images/mixologia/bar-4.webp"
-              alt="Mesa de Degustación y Vinos"
+              alt="Ambiente de Bar, Música y Coctelería"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-sm font-serif text-[#F4F5F1]">Mesa de Degustación & Vinos</span>
+              <span className="text-sm font-serif text-[#F4F5F1]">Música, Karaoke & Brindis</span>
             </div>
           </div>
 
