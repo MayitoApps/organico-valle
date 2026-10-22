@@ -8,7 +8,6 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/data";
 
 const NAV_LINKS = [
-  { href: "/", label: "Inicio" },
   { href: "/nuestras-habitaciones", label: "Habitaciones" },
   { href: "/quienes-somos", label: "¿Quiénes Somos?" },
   { href: "/restaurante", label: "Restaurante" },
