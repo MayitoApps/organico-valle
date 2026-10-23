@@ -81,7 +81,7 @@ export const ROOMS: RoomData[] = [
     subtitle: "Terraza privada, salita de estar y máximo confort",
     description:
       "Las habitaciones Master cuentan con terraza privada, salita de estar, regadera, tele con cable e internet, caja fuerte, 2 botellas con agua, 2 refrescos, toallas, batas y un pequeño closet.",
-    price: "$4,500.00 MXN",
+    price: "$5,220.00 MXN",
     capacity: "2 personas (Adultos)",
     bedType: "1 Cama King Size",
     features: [
@@ -109,7 +109,7 @@ export const ROOMS: RoomData[] = [
     subtitle: "Confort contemporáneo y balcón con vistas a los jardines",
     description:
       "Diseñada para reconectar con el silencio. Su armonía entre maderas, fibras naturales y luz filtrada crea el ambiente ideal para una estancia en pareja o un descanso individual regenerador tras un día explorando el lago.",
-    price: "$3,500.00 MXN",
+    price: "$4,060.00 MXN",
     capacity: "2 personas",
     bedType: "1 Cama King Size o 2 Camas Queen",
     features: [
@@ -135,7 +135,7 @@ export const ROOMS: RoomData[] = [
     subtitle: "Espacio amplio para compartir en familia",
     description:
       "Las habitaciones familiares cuentan con 1 cama king size con baño individual, una salita de estar, una litera con cama matrimonial e individual, no tiene vista, algunas cuentan con aire acondicionado.",
-    price: "$5,500.00 MXN",
+    price: "$6,380.00 MXN",
     capacity: "Hasta 5 personas",
     bedType: "1 Cama King Size + 1 Litera (Matrimonial e Individual)",
     features: [

@@ -28,11 +28,11 @@ export type BookingServiceType =
 
 const DEFAULT_MESSAGES: Record<BookingServiceType, string> = {
   master_suite:
-    "Hola Orgánico Hotel Boutique Valle, me gustaría reservar la Suite Master ($4,500.00 MXN / noche). ¿Podrían compartirme disponibilidad para mis fechas?",
+    "Hola Orgánico Hotel Boutique Valle, me gustaría reservar la Suite Master ($5,220.00 MXN / noche). ¿Podrían compartirme disponibilidad para mis fechas?",
   premium_suite:
-    "Hola Orgánico Hotel Boutique Valle, me gustaría reservar la Suite Premium ($3,500.00 MXN / noche). ¿Tienen fechas disponibles?",
+    "Hola Orgánico Hotel Boutique Valle, me gustaría reservar la Suite Premium ($4,060.00 MXN / noche). ¿Tienen fechas disponibles?",
   familiar_suite:
-    "Hola Orgánico Hotel Boutique Valle, me gustaría reservar la Suite Familiar ($5,500.00 MXN / noche). ¿Podrían compartirme disponibilidad para mis fechas?",
+    "Hola Orgánico Hotel Boutique Valle, me gustaría reservar la Suite Familiar ($6,380.00 MXN / noche). ¿Podrían compartirme disponibilidad para mis fechas?",
   habitaciones_general:
     "Hola Orgánico Hotel Boutique Valle, me interesa conocer la disponibilidad de habitaciones y tarifas vigentes.",
   restaurante_milagro:
